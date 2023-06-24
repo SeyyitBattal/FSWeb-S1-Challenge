@@ -275,7 +275,11 @@ Aşağıdakileri yapmak için fenomenGonderimSayisi'nı kullanın:
 */
 
 function fenomenGonderimSayisi(fenomen8, profile8) {
-  return;
+  for (let i = 0; i < fenomen8.length; i++) {
+    if (fenomen8[i].profile == profile8) {
+      return fenomen8[i].posts;
+    }
+  }
 }
 console.log(fenomenGonderimSayisi(fenomenler, "Will Smith"));
 
