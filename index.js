@@ -160,7 +160,7 @@ Fenomenler dizisinde bir yazım hatası var 😱 7. sıradaki fenomen 'Justin Bi
 fenomenler[8].profile = "Justin Bieber";
 console.log(fenomenler[8]);
 
-/* Görev 3:
+/* Görev 3: ??????????????????????????????????????????????
 Aşağıdaki işlemleri yapmak için indekseGoreFenomen işlevini kullanın:
 1. İlk parametre olarak fenomenler dizisini alın,
 2. İkinci parametre de ise, dizide istenen feneomene ait indeksi gösteren bir sayıyı alın.
@@ -169,14 +169,10 @@ Aşağıdaki işlemleri yapmak için indekseGoreFenomen işlevini kullanın:
 NOT: DÖNDÜĞÜNÜZ DİZİN YUKARIDAKİ BİÇİMLE EŞLEŞMESİ GEREKİR, YA DA TESTİ GEÇMEYECEKTİR!
 ÖRNEK: fenomenler dizisi ve 3 sayısı ile indekseGoreFenomen çağrılırsa, `3. indekste bulunan fenomen: Leo Messi' */
 
-function indekseGoreFenomen(fenomen2, index2) {
+function indekseGoreFenomen(fenomen3, index3) {
   console.log(
-    fenomen2[index2].length +
-      "indekte bulunan fenomen: " +
-      fenomen2[index2].profile
+    `${index3}. indekste bulunan fenomen: ${fenomen3[index3].profile}`
   );
-
-  //indeks alınacak
 
   return;
 }
@@ -192,10 +188,14 @@ Aşağıdakileri yapmak için profilListesi'ni kullanın:
 
 function profilListesi(fenomen4) {
   const yeniProfil = [];
+  for (let i = 0; i < fenomen4.length; i++) {
+    yeniProfil.push(fenomen4[i].profile);
+  }
+  return yeniProfil;
 }
 console.log(profilListesi(fenomenler));
 
-/* Görev 5:
+/* Görev 5: ?????????????????????????????????????????????
 Aşağıdakileri yapmak için fenomenSil'i kullanın:
 1. ilk parametre olarak fenomenler dizisini alın
 2. ikinci parametre olarak istenen dizin(indeks) saysısını argüman olarak alın
@@ -205,9 +205,9 @@ Aşağıdakileri yapmak için fenomenSil'i kullanın:
 
 ÖRNEK: fenomenSil işlevi fenomenler dizisi ve 0 indeks sayısı ile çağrılırsa, veri kümemizden 'Instagram' kaldırılmış olarak döndürür. */
 function fenomenSil(fenomen5, indeks5) {
-  // const buYeni = [];
-  // buYeni = fenomen5;
-  // delete buYeni[indeks5.profile];
+  let yeniFenomen = fenomen5;
+  delete yeniFenomen[indeks5].profile;
+  return yeniFenomen;
 }
 console.log(fenomenSil(fenomenler, 0));
 
@@ -229,13 +229,17 @@ Aşağıdakileri yapmak için fenomenEkle'i kullanın:
 ÖRNEK: fenomenEkle(fenomenler, 6, "Workintech", 10000000, 2022, "Instagram") çağrıldığında dizinin sonuna yukarıdaki nesne en sona eklenerek yeni fenomenler dizisini döndürmelidir. */
 
 function fenomenEkle(fenomen6, no6, profile6, followers6, posts6, platform6) {
-  const secim6 = {
+  const ekleme = fenomen6;
+
+  const yeniEleman = {
     number: no6,
     profile: profile6,
     followers: followers6,
     posts: posts6,
     platform: platform6,
   };
+  ekleme.push(yeniEleman);
+  return ekleme;
 }
 console.log(
   fenomenEkle(fenomenler, 6, "Workintech", 10000000, 2022, "Instagram")
