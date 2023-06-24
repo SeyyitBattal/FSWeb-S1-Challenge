@@ -170,11 +170,7 @@ NOT: DÖNDÜĞÜNÜZ DİZİN YUKARIDAKİ BİÇİMLE EŞLEŞMESİ GEREKİR, YA DA
 ÖRNEK: fenomenler dizisi ve 3 sayısı ile indekseGoreFenomen çağrılırsa, `3. indekste bulunan fenomen: Leo Messi' */
 
 function indekseGoreFenomen(fenomen3, index3) {
-  console.log(
-    `${index3}. indekste bulunan fenomen: ${fenomen3[index3].profile}`
-  );
-
-  return;
+  return `${index3}. indekste bulunan fenomen: ${fenomen3[index3].profile}`;
 }
 console.log(indekseGoreFenomen(fenomenler, 3));
 
@@ -195,7 +191,7 @@ function profilListesi(fenomen4) {
 }
 console.log(profilListesi(fenomenler));
 
-/* Görev 5: ?????????????????????????????????????????????
+/* Görev 5: 
 Aşağıdakileri yapmak için fenomenSil'i kullanın:
 1. ilk parametre olarak fenomenler dizisini alın
 2. ikinci parametre olarak istenen dizin(indeks) saysısını argüman olarak alın
@@ -205,8 +201,8 @@ Aşağıdakileri yapmak için fenomenSil'i kullanın:
 
 ÖRNEK: fenomenSil işlevi fenomenler dizisi ve 0 indeks sayısı ile çağrılırsa, veri kümemizden 'Instagram' kaldırılmış olarak döndürür. */
 function fenomenSil(fenomen5, indeks5) {
-  let yeniFenomen = fenomen5;
-  delete yeniFenomen[indeks5].profile;
+  const yeniFenomen = [...fenomen5];
+  yeniFenomen.splice(indeks5, 1);
   return yeniFenomen;
 }
 console.log(fenomenSil(fenomenler, 0));
@@ -265,7 +261,7 @@ function enFenomenler(famous) {
 }
 console.log(enFenomenler(fenomenler));
 
-/* Görev 8: ??????????????????????????????????????????????????????????
+/* Görev 8: 
 Aşağıdakileri yapmak için fenomenGonderimSayisi'nı kullanın:
 1. ilk parametre olarak fenomenler dizisini alın
 2. ikinci parametre olarak fenomen profil adını (profile) alın
@@ -297,9 +293,12 @@ Not: Gönderi sayısı belli olmayan (NA) hesaba katmayın.
 function platformaGoreCokGonderiYapanFenomen(fenomen9, platform9) {
   let enCok = [0];
   for (let i = 0; i < fenomen9.length; i++) {
-    if (fenomen9[i].platform == platform9 && fenomen9[i].posts > enCok) {
+    if (
+      fenomen9[i].platform == platform9 &&
+      fenomen9[i].posts > enCok &&
+      fenomen9[i].posts !== "NA"
+    )
       return fenomen9[i].profile;
-    }
   }
 }
 
