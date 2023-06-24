@@ -301,7 +301,6 @@ function platformaGoreCokGonderiYapanFenomen(fenomen9, platform9) {
       return fenomen9[i].profile;
   }
 }
-
 console.log(platformaGoreCokGonderiYapanFenomen(fenomenler, "TikTok"));
 
 /* ***** GÖREVLERİN SONU ***** */
