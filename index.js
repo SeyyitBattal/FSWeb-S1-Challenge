@@ -253,9 +253,17 @@ Aşağıdakileri yapmak için enFenomenler'yi kullanın:
 ÖRNEK: enFenomenler(fenomenler) çağrıldığında sonuç olarak ["Instagram", "Cristiano Ronaldo", ... "Khabane lame"] dönemelidir
 */
 
-function enFenomenler(/*kod*/) {
-  /*kod*/
+function enFenomenler(famous) {
+  const mostFamous = [];
+
+  for (let i = 0; i < famous.length; i++) {
+    if (famous[i].followers > 100000000) {
+      mostFamous.push(famous[i].profile);
+    }
+  }
+  return mostFamous;
 }
+console.log(enFenomenler(fenomenler));
 
 /* Görev 8:
 Aşağıdakileri yapmak için fenomenGonderimSayisi'nı kullanın:
